@@ -5,7 +5,8 @@ COPY *.csproj ./
 RUN dotnet restore
 # Copy everything else and build
 COPY . ./
-RUN dotnet publish -c Release -o out
+#RUN dotnet publish -c Release -o out
+RUN dotnet publish -c Release -o publish
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
 WORKDIR /app
